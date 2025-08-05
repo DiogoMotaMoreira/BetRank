@@ -4,7 +4,7 @@ import 'jogador.dart';
 class HomePage extends StatefulWidget {
   final List<Jogador> jogadores;
 
-  HomePage({required this.jogadores});
+  const HomePage({super.key, required this.jogadores});
 
   @override
   _HomePageState createState() => _HomePageState();

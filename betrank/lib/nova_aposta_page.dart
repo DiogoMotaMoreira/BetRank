@@ -5,7 +5,7 @@ import 'jogador.dart';
 class NovaApostaPage extends StatefulWidget {
   final List<Jogador> jogadores;
 
-  NovaApostaPage({required this.jogadores});
+  const NovaApostaPage({super.key, required this.jogadores});
 
   @override
   _NovaApostaPageState createState() => _NovaApostaPageState();
@@ -56,7 +56,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                       'JOGADOR A',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Color.fromARGB(255, 103, 103, 103),
                       ),
                       textAlign: TextAlign.center,
@@ -71,7 +71,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                     ),
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                     value: jogadorA,
@@ -100,7 +100,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                       'JOGADOR B',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Color.fromARGB(255, 103, 103, 103),
                       ),
                       textAlign: TextAlign.center,
@@ -115,7 +115,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                     ),
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                     value: jogadorB,
@@ -154,7 +154,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                           child: Text(
                             'MONTANTE',
                               style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20, color: const Color.fromARGB(255, 103, 103, 103),
+                                fontWeight: FontWeight.bold, fontSize: 16, color: const Color.fromARGB(255, 103, 103, 103),
                               ),
                             ),
                           ),
@@ -175,8 +175,10 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+
+                Flexible(child: 
                 Container(
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(24),
@@ -205,7 +207,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                         child: Text(
                           '\nVENCEU A\n',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -213,10 +215,11 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                     ],
                   ),
                 ),
+                ),
 
-                
+                Flexible(child: 
                 Container(
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(24),
@@ -247,13 +250,14 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                         child: Text(
                           '\nVENCEU B\n',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                     ],
                   ),
+                ),
                 ),
               ],
             ),

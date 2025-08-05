@@ -4,7 +4,7 @@ import 'jogador.dart';
 class RankingPage extends StatelessWidget {
   final List<Jogador> jogadores;
 
-  RankingPage({required this.jogadores});
+  const RankingPage({super.key, required this.jogadores});
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +47,9 @@ class RankingPage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final jogador = ordenados[index];
                         return ListTile(
-                          leading: Text('${index + 1}º', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                          title: Text(jogador.nome , style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                          trailing: Text('${_formatFichas(jogador.fichas)} FICHAS', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                          leading: Text('${index + 1}º', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
+                          title: Text(jogador.nome , style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
+                          trailing: Text('${_formatFichas(jogador.fichas)} FICHAS', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
                         );
                       },
                     ),

@@ -6,7 +6,7 @@ import 'jogador.dart';
 class HomePage extends StatefulWidget  {
   final List<Jogador> jogadores;
 
-  HomePage({required this.jogadores});
+  const HomePage({super.key, required this.jogadores});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       labelText: 'NOME',
-                      labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: const Color.fromARGB(255, 103, 103, 103)),
+                      labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: const Color.fromARGB(255, 103, 103, 103)),
                       fillColor: Color.fromARGB(255, 19, 19, 19),
                       filled: true,
                       border: OutlineInputBorder(
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       labelText: 'FICHAS',
-                      labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: const Color.fromARGB(255, 103, 103, 103)),
+                      labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: const Color.fromARGB(255, 103, 103, 103)),
                       fillColor: Color.fromARGB(255, 19, 19, 19),
                       filled: true,
                       border: OutlineInputBorder(
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
 
                   }, child: Text('ADICIONAR JOGADOR', style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     ),),
                   ),
@@ -125,19 +125,19 @@ class _HomePageState extends State<HomePage> {
                     margin: EdgeInsets.all(8),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     child: ListTile(
-                      title: Text(jogador.nome, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      title: Text(jogador.nome, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
                       trailing: Row(mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           '${_formatFichas(jogador.fichas)} FICHAS',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                         ),
                         IconButton(onPressed: (){
                           setState(() {
                             widget.jogadores.removeAt(index);
                           });
                         }, 
-                        icon: Icon(Icons.delete, color: Colors.red, size: 30,))
+                        icon: Icon(Icons.delete, color: Colors.red, size: 25,))
                       ],)
                     ),
                   );
