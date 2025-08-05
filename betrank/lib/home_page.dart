@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: InputDecoration(
                       labelText: 'NOME',
                       labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: const Color.fromARGB(255, 103, 103, 103)),
-                      fillColor: Colors.black,
+                      fillColor: Color.fromARGB(255, 19, 19, 19),
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: InputDecoration(
                       labelText: 'FICHAS',
                       labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: const Color.fromARGB(255, 103, 103, 103)),
-                      fillColor: Colors.black,
+                      fillColor: Color.fromARGB(255, 19, 19, 19),
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                   ElevatedButton(
                     
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
+                      backgroundColor: Color.fromARGB(255, 19, 19, 19),
                       padding:EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), 
                     ),
