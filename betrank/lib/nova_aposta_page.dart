@@ -20,17 +20,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Nova Aposta',),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-        ),
-        backgroundColor: const Color.fromARGB(255, 19, 19, 19),
-        ),
-
-      backgroundColor: Color.fromARGB(255, 19, 19, 19),
+      backgroundColor: Colors.transparent,
 
 
       body: 
@@ -39,13 +29,34 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
         child: Column(
           children: [
 
+            SizedBox(height: 8),
+
+            Image.asset("assets/images/chips.png"),
+            
+            SizedBox(height: 8),
+
+            Text('NEW BET',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),),
+
+            SizedBox(height: 8),
+
             Container(
               width: double.infinity,
               padding: EdgeInsets.all(16.0),
-              margin: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
               ),
               
               child: Column(
@@ -61,10 +72,10 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    dropdownColor: Color.fromARGB(255, 19, 19, 19),
+                    dropdownColor: Color(0xFF42008D).withOpacity(0.8),
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color.fromARGB(255, 19, 19, 19),
+                      fillColor: Colors.black.withOpacity(0.2),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
                       ),
@@ -105,10 +116,10 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    dropdownColor: Color.fromARGB(255, 19, 19, 19),
+                    dropdownColor: Color(0xFF42008D).withOpacity(0.8),
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color.fromARGB(255, 19, 19, 19),
+                      fillColor: Colors.black.withOpacity(0.2),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
                       ),
@@ -158,7 +169,7 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
                               ),
                             ),
                           ),
-                        fillColor: Color.fromARGB(255, 19, 19, 19),
+                        fillColor: Colors.black.withOpacity(0.2),
                         filled: true,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
@@ -172,95 +183,95 @@ class _NovaApostaPageState extends State<NovaApostaPage> {
             
             SizedBox(height: 16),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+            
 
-                Flexible(child: 
-                Container(
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(24),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color.fromARGB(255, 19, 19, 19),
-                        blurRadius: 8,
-                        offset: Offset(0, 4),
-                      ),
-                    ],
+              
+            Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => _registarVencedor(jogadorA),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 19, 19, 19),
-                          foregroundColor: Colors.white, // texto e ripple
-                          elevation: 4,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                        ),
-                        child: Text(
-                          '\nVENCEU A\n',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () => _registarVencedor(jogadorA),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF5E00A0).withOpacity(0.6),
+                      shadowColor: Colors.black,
+                      minimumSize: Size(double.infinity, 0), // ocupa largura máxima permitida
+                      foregroundColor: Colors.white, // texto e ripple
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                       ),
-                    ],
-                  ),
-                ),
-                ),
-
-                Flexible(child: 
-                Container(
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(24),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color.fromARGB(255, 19, 19, 19),
-                        blurRadius: 8,
-                        offset: Offset(0, 4),
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                    ),
+                    child: Text(
+                      'JOGADOR A VENCEU',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
+                    ),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => _registarVencedor(jogadorB),
-                        style: ElevatedButton.styleFrom(
-                          
-                          backgroundColor: Color.fromARGB(255, 19, 19, 19),
-                          foregroundColor: Colors.white, // texto e ripple
-                          elevation: 4,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            
-                          ),
-                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                        ),
-                        child: Text(
-                          '\nVENCEU B\n',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                ),
-              ],
+                ],
+              ),
             ),
+          
+            SizedBox(height: 8),
+          
+            Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    
+                    onPressed: () => _registarVencedor(jogadorB),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF5E00A0).withOpacity(0.6),
+                      shadowColor: Colors.black,
+                      minimumSize: Size(double.infinity, 0), // ocupa largura máxima permitida
+                      foregroundColor: Colors.white, // texto e ripple
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                    ),
+                    child: Text(
+                      'JOGADOR B VENCEU',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+              
+            
           ],
         ),
       ),

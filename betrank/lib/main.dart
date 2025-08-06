@@ -48,10 +48,27 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_currentIndex],
+      backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFF0A0068),
+              Color(0xFF26007B),
+              Color(0xFF42008D),
+              Color(0xFF5E00A0),
+              Color(0xFF7A00B2),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: _pages[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Color(0xFF5E00A0),
         onTap: (index) {
           setState(() {
             _currentIndex = index;

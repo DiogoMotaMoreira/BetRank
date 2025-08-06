@@ -11,45 +11,73 @@ class RankingPage extends StatelessWidget {
     List<Jogador> ordenados = [...jogadores]..sort((a, b) => b.fichas.compareTo(a.fichas));
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Ranking',),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-        ),
-        backgroundColor: const Color.fromARGB(255, 19, 19, 19),
-        ),
 
-      backgroundColor: Color.fromARGB(255, 19, 19, 19),
+      backgroundColor: Colors.transparent,
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+
+            SizedBox(height: 8),
+
+            Image.asset("assets/images/chips.png"),
+            
+            SizedBox(height: 8),
+
+            Text('RANKING',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),),
+
+            SizedBox(height: 8),
+
+
             Container(
               width: double.infinity,
-              
-              padding: EdgeInsets.all(16.0),
-              margin: EdgeInsets.all(8.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
               ),
               
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.7,
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * 0.65,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: ordenados.length,
                       itemBuilder: (context, index) {
                         final jogador = ordenados[index];
-                        return ListTile(
-                          leading: Text('${index + 1}º', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
-                          title: Text(jogador.nome , style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
-                          trailing: Text('${_formatFichas(jogador.fichas)} FICHAS', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
+                        return Container(
+                          margin: EdgeInsets.symmetric(vertical: 4),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.03), 
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.12),
+                                blurRadius: 8,
+                                offset: Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: ListTile(
+                              leading: Text('${index + 1}º', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),),
+                              title: Text(jogador.nome , style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),),
+                              trailing: Text('${_formatFichas(jogador.fichas)} FICHAS', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),),
+                            )
                         );
                       },
                     ),

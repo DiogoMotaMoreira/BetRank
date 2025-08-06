@@ -20,30 +20,42 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Jogadores',),
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-        ),
-        backgroundColor: const Color.fromARGB(255, 19, 19, 19),
-        ),
 
-      backgroundColor: const Color.fromARGB(255, 19, 19, 19),
+      backgroundColor: Colors.transparent,
 
       body: Padding(
         
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            SizedBox(height: 8),
+
+            Image.asset("assets/images/chips.png"),
+            
+            SizedBox(height: 8),
+
+            Text('PLAYERS',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),),
+
+            SizedBox(height: 8),
+
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(16.0),
-              margin: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 18.0),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(24),
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
               ),
               
               child: Column(
@@ -55,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: InputDecoration(
                       labelText: 'NOME',
                       labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: const Color.fromARGB(255, 103, 103, 103)),
-                      fillColor: Color.fromARGB(255, 19, 19, 19),
+                      fillColor: Colors.black.withOpacity(0.2),
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
@@ -67,14 +79,17 @@ class _HomePageState extends State<HomePage> {
 
                   TextField(
                     controller: _fichasController,
+                    keyboardType: TextInputType.number,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       labelText: 'FICHAS',
                       labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: const Color.fromARGB(255, 103, 103, 103)),
-                      fillColor: Color.fromARGB(255, 19, 19, 19),
+                      fillColor: Colors.black.withOpacity(0.2),
                       filled: true,
+                      
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
+                        
                       ),
                       ),
                   ),
@@ -84,9 +99,15 @@ class _HomePageState extends State<HomePage> {
                   ElevatedButton(
                     
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 19, 19, 19),
-                      padding:EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), 
+                      backgroundColor: Color(0xFF5E00A0).withOpacity(0.6),
+                      shadowColor: Colors.black,
+                      minimumSize: Size(double.infinity, 0), // ocupa largura máxima permitida
+                      foregroundColor: Colors.white, // texto e ripple
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 16),
                     ),
                     
                     onPressed: (){
@@ -120,17 +141,17 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index){
                   final jogador = widget.jogadores[index];
                   return Card(
-                    color: Colors.white,
+                    color: Colors.black.withOpacity(0.1),
                     elevation: 3,
-                    margin: EdgeInsets.all(8),
+                    margin: EdgeInsets.symmetric(vertical: 2),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     child: ListTile(
-                      title: Text(jogador.nome, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
+                      title: Text(jogador.nome, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),),
                       trailing: Row(mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           '${_formatFichas(jogador.fichas)} FICHAS',
-                          style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: const Color.fromARGB(150, 255, 255, 255)),
                         ),
                         IconButton(onPressed: (){
                           setState(() {
